@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOMATEC</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/fulllogo_transparent_nobuffer.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <img src="img/fulllogo_transparent_nobuffer.png" alt="Logotipo MM Refrigeração" width="180px">
+
+    <div>
+
+        <!-- Contêiner para todas as câmeras -->
+        <div id="camerasContainer">
+
+            <div class="container">
+                <!-- Temperatura Real -->
+                <div class="temp-container" id="tempContainer">
+                    <h2>Temperatura Real</h2>
+                    <span id="tempCongelado">Câmara Congelado: --°C</span>
+                    <span id="tempCongelado">Câmaras Refrigerados: --°C</span>
+                </div>
+            </div>
+
+
+
+            <!-- Câmara Congelado -->
+            <div class="cameras">
+                <div class="camera" id="cameraCongelado" onclick="showCameraFunctions('Congelado')">
+                    <h2>Câmara Congelado:</h2>
+                    <p>Sensor 01: <span id="tempCongelado-sensor1">Carregando...</span></p>
+                    <p>Sensor 02: <span id="tempCongelado-sensor2">Carregando...</span></p>
+                    <p>Modo: <span>Refrigeração</span></p>
+                </div>
+            </div>
+
+
+
+
+            <!-- Câmaras Refrigerados -->
+            <div class="cameras">
+                <div class="camera" id="cameraRefriados" onclick="showCameraFunctions('Refriados')">
+                    <h2>Câmaras Refrigerados:</h2>
+                    <p>Sensor 01: <span id="tempRefriados-sensor1">Carregando...</span></p>
+                    <p>Sensor 02: <span id="tempRefriados-sensor2">Carregando...</span></p>
+                    <p>Modo: <span>Refrigeração</span></p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Funções da câmara (invisíveis até o clique) -->
+        <div id="functionsContainer" style="display: none;">
+            <div class="functions" id="functionsCongelado" style="display:none;">
+                <h3>Funções - Câmara Congelado</h3>
+
+                <!-- Botões para controlar os relés -->
+                <button onclick="controlarRele('ventilacao', 'off')">Desligar Ventilação</button>
+                <button onclick="controlarRele('ventilacao', 'on')">Ligar Ventilação</button>
+
+                <button onclick="controlarRele('solenoide', 'off')">Desligar Solenoide</button>
+                <button onclick="controlarRele('solenoide', 'on')">Ligar Solenoide</button>
+
+                <button onclick="controlarRele('degelo', 'off')">Desligar Degelo</button>
+                <button onclick="controlarRele('degelo', 'on')"> Ligar Degelo</button>
+
+                <button onclick="controlarRele('iluminacao', 'off')">Desligar Iluminação</button>
+                <button onclick="controlarRele('iluminacao', 'on')">Ligar Iluminação</button>
+                <button onclick="closeFunctions()">Voltar</button>
+
+
+            </div>
+
+            <div class="functions" id="functionsRefriados" style="display:none;">
+                <h3>Funções - Câmaras Refrigerados</h3>
+                <button onclick="controlFunction('ventilacao', 'Refriados')">Ventilação</button>
+                <button onclick="controlFunction('solenoide', 'Refriados')">Solenoide</button>
+                <button onclick="controlFunction('degelo', 'Refriados')">Degelo</button>
+                <button onclick="controlFunction('iluminacao', 'Refriados')">Iluminação</button>
+                <button onclick="closeFunctions()">Voltar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p> © Protocolo IAN 2025</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

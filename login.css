@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('img/cyber-3400789_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Permite que o rodapé fique no final */
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #fff;
+    width: 300px;
+    z-index: 1;
+    margin-top: 50px; /* Ajusta o espaço superior para a logo */
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Transparência nos campos de entrada */
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #fff; /* Mantém a borda branca */
+    background: transparent; /* Torna o fundo transparente */
+    color: #fff; /* Cor do texto */
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Cor do placeholder */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #2996c290;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2493a6c0;
+}
+
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: rgba(51, 51, 51, 0.9); /* Fundo escuro com transparência */
+    color: white;
+    text-align: center;
+    padding: 5px 0; /* Deixa o rodapé mais fino */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+    z-index: 0; /* Coloca o rodapé abaixo do formulário de login */
+}
+
+footer p {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+}
